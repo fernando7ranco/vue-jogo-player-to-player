@@ -1,0 +1,72 @@
+#app{
+    margin: 10px auto;
+}
+
+.borda-shadow{
+    margin: 20px  auto;
+    padding: 20px;
+    box-shadow: 2px 2px 6px 7px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.box-player{
+    width: 48%;
+    display: inline-block;
+}
+
+.barra-progresso{
+    width: 80%;
+    margin: auto;
+}
+
+.barra-progresso .progresso{
+    height: 25px;
+    background-color: green;
+}
+
+.barra-progresso .progresso.critico{
+    background-color: red !important;
+}
+.barra-progresso .progresso.alerta{
+    background-color: orange !important;
+}
+button{
+    padding: 10px 15px;
+    color:white;
+    font-size: 16px;
+    border-radius: 5px;
+    border:1px solid rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+button#novojogo{
+    background-color: blue;
+}
+button#ataque{
+    background-color: red;
+}
+button#ataqueespecial{
+    background-color: orange;
+}
+button#curar{
+    background-color: green;
+}
+button#desistir{
+    background-color: gray;
+}
+footer ul{list-style-type: none}
+
+footer ul li{
+    padding: 10px;
+    width: 90%;
+    border-radius: 6px;
+    border:1px solid rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+footer ul li:nth-child(2n+1){
+    background-color: red;
+}
+footer ul li:nth-child(2n){
+    background-color: blue;
+}
