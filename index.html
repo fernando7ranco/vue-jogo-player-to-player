@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+
+</head>
+<body>
+
+    <div id="app">
+        <header class="borda-shadow">    
+            <div class="box-player">
+                <small>Player 1</small>
+                <h1>You</h1>
+                <div class="barra-progresso">
+                    <div class="progresso" :class="{critico: critico.player1, alerta: alerta.player1}" :style="[{width:porcentagem.player1 + '%'}]"></div>
+                    <small>{{ porcentagem.player1 }}%</small>
+                </div>
+            </div>
+
+            <div class="box-player">
+                <small>Player 2</small>
+                <h1>boot</h1>
+                <div class="barra-progresso">
+                    <div class="progresso" :class="{critico: critico.player2, alerta: alerta.player2}" :style="[{width:porcentagem.player2 + '%'}]"></div>
+                    <small>{{ porcentagem.player2 }}%</small>
+                </div>
+            </div>
+        </header>
+        <article>
+            <div class="borda-shadow" v-show="perdeu">
+                <h1>Você perdeu!</h1>
+            </div>
+            <div class="borda-shadow"  v-show="ganhou">
+                <h1>Você ganhou!</h1>
+            </div>
+            <div id="comandos" class="borda-shadow">    
+                <button id="novojogo" v-show="!jogoRodando" @click="startJogo" >INICIAR NOVO JOGO</button>
+                <tamplate v-show="jogoRodando">
+                    <button id="ataque" @click="atacar">ATAQUE</button>
+                    <button id="ataqueespecial" @click="atacarEspecial">ATAQUE ESPECIAL</button>
+                    <button id="curar" @click="curar">CURAR</button>
+                    <button id="desistir" @click="finalizarJogo">DESISTIR</button>
+                </tamplate>
+            </div>
+        </article>
+        <footer class="borda-shadow" v-show="jogadas.length">
+            <ul>
+                <li v-for="jogada in jogadas">{{ jogada }}</li>
+            </ul>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="./index.js"></script>
+</body>
+</html>
+
+
